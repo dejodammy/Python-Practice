@@ -3,14 +3,14 @@
 # pet = input("What's your pet's name?\n")
 # print(f"Your band name could be {city} {pet} ")
 
-print("Welcome to the tip calculator!")
-bill = float(input("what was the total bill? $"))
-tip = float(input("How much tip would you like to give? 10, 12, or 15?"))
-tip_percentage = tip/100 * bill
-total_bill = tip_percentage + bill 
-people = int(input("How many people to split the bill? "))
-cut = total_bill/people
-print(f"each person should pay: ${cut:.2f}")
+# print("Welcome to the tip calculator!")
+# bill = float(input("what was the total bill? $"))
+# tip = float(input("How much tip would you like to give? 10, 12, or 15?"))
+# tip_percentage = tip/100 * bill
+# total_bill = tip_percentage + bill 
+# people = int(input("How many people to split the bill? "))
+# cut = total_bill/people
+# print(f"each person should pay: ${cut:.2f}")
 
 # print(''' 
 # *******************************************************************************
@@ -65,32 +65,7 @@ print(f"each person should pay: ${cut:.2f}")
 # print(dirty_dozen[1][3])
 
 # import random
-# rock = '''
-#     _______
-# ---'   ____)
-#       (_____)
-#       (_____)
-#       (____)
-# ---.__(___)
-# '''
-
-# paper = '''
-#     _______
-# ---'   ____)____
-#           ______)
-#           _______)
-#          _______)
-# ---.__________)
-# '''
-
-# scissors = '''
-#     _______
-# ---'   ____)____
-#           ______)
-#        __________)
-#       (____)
-# ---.__(___)
-# '''
+# from hangmanart import rock, paper,scissors
 
 # player_choice = int(input("What do you choose? Type 0 for Rock, 1 for Paper or 2 for Scissors."))
 # computer_choice = random.randint(0,2)
@@ -105,7 +80,7 @@ print(f"each person should pay: ${cut:.2f}")
 # else:
 #     print("You lost")
 
-# import random
+# # import random
 # letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z','a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 # symbols =  ['!', '"', '#', '$', '%', '&', "'", '(', ')', '*', '+', ',', '-', '.', '/', ':', ';', '<', '=', '>', '?', '@', '[', '\\', ']', '^', '_', '`', '{', '|', '}', '~']
 # number = ["0","1","2","3","4","5","6","7","8","9"]
@@ -123,4 +98,139 @@ print(f"each person should pay: ${cut:.2f}")
 # password = ''.join(random.sample(password,len(password)))
 # print("Here is your password: ", password)
 
+# import random
+# from hangmanart import stages,  logo
 
+# words = ['table', 'chair', 'book', 'apple']
+
+# def choose_word():
+#     """Choose a random word from the list and return it."""
+#     return random.choice(words)
+
+# def initialize_game():
+#     """Initialize game variables for a new game."""
+#     global guess_words, blanks, attempts, guessed_letter
+    
+#     guess_words = choose_word()
+#     blanks = ['_'] * len(guess_words)
+#     attempts = 6
+#     guessed_letter = set()
+
+# def guess_valid(user_guess):
+#     return len(user_guess) == 1 and user_guess.isalpha()
+
+# def update_blanks(letter):
+#     global blanks
+#     for index, char in enumerate(guess_words):
+#         if char == letter:
+#             blanks[index] = letter
+
+# def display_status():
+#     print(f"Current word status: {' '.join(blanks)}")
+#     print(f"Guessed letters: {', '.join(sorted(guessed_letter))}")
+#     print(f"Attempts left: {attempts}")
+#     print(stages[attempts])
+
+# def main():
+#     global attempts, guessed_letter, blanks, guess_words  # Declare global variables
+    
+#     initialize_game()  # Initialize the game state
+    
+#     print(logo)
+#     print(f"WELCOME TO HANGMAN! HERE IS THE WORD LENGTH: {' '.join(blanks)}")
+#     print(stages[6])
+    
+#     while attempts > 0 and '_' in blanks:
+#         user_guess = input("Guess a letter: ").lower()
+        
+#         if not guess_valid(user_guess):
+#             print("Invalid guess. Please enter a single letter.")
+#             continue
+        
+#         if user_guess in guessed_letter:
+#             print("You have already guessed that letter.")
+#             continue
+        
+#         guessed_letter.add(user_guess)
+        
+#         if user_guess in guess_words:
+#             update_blanks(user_guess)
+#             print("Good guess!")
+#         else:
+#             attempts -= 1
+#             print(f"Wrong guess. You have {attempts} attempts left.")
+        
+#         display_status()
+    
+#     if '_' not in blanks:
+#         print("Congrats! You have guessed the word.")
+#     else:
+#         print(f"Game over. The word was {guess_words}.")
+    
+#     play_again = input("Do you want to play again? Y/N: ").strip().lower()
+#     if play_again == 'y':
+#         main()  # Restart the game
+#     else:
+#         print("Thanks for playing!")
+
+# if __name__ == "__main__":
+#     main()
+
+
+
+
+# def encrypt(message, shift):
+#     encrypted_message = []
+#     for char in message:
+#         if char.isalpha():
+#             # Determine if the character is uppercase or lowercase
+#             base = ord('A') if char.isupper() else ord('a')
+#             # Shift the character and ensure it wraps around the alphabet
+#             encrypted_char = chr((ord(char) - base + shift) % 26 + base)
+#             encrypted_message.append(encrypted_char)
+#         else:
+#             # Non-alphabetic characters remain unchanged
+#             encrypted_message.append(char)
+#     return ''.join(encrypted_message)
+
+# def decrypt(encrypted_message, shift):
+#     decrypted_message = []
+#     for char in encrypted_message:
+#         if char.isalpha():
+#             # Determine if the character is uppercase or lowercase
+#             base = ord('A') if char.isupper() else ord('a')
+#             # Reverse the shift to decrypt and ensure it wraps around the alphabet
+#             decrypted_char = chr((ord(char) - base - shift) % 26 + base)
+#             decrypted_message.append(decrypted_char)
+#         else:
+#             # Non-alphabetic characters remain unchanged
+#             decrypted_message.append(char)
+#     return ''.join(decrypted_message)
+
+# def main():
+#     while True:
+#         choice = input("Type 'encode' to encrypt or 'decode' to decrypt: ").strip().lower()
+#         if choice == "encode":
+#             shift = int(input("What is the shift? "))
+#             message = str(input("What is the message? "))
+#             encrypted = encrypt(message, shift)
+#             print(f"Encrypted Message: {encrypted}")
+        
+#         elif choice == "decode":
+#             shift = int(input("What is the shift? "))
+#             message = input("What is the message? ")
+#             decrypted = decrypt(message, shift)
+#             print(f"Decrypted Message: {decrypted}")
+        
+#         while True:
+#             play_again = input("Do you want to go again? (yes or no): ").strip().lower()
+#             if play_again == "yes":
+#                 break
+#             elif play_again == "no":
+#                 print("Thanks for playing!")
+#                 return  # Exit the program
+#             else:
+#                 print("Invalid input. Please enter 'yes' or 'no'.")
+
+# if __name__ == "__main__":
+#         main()
