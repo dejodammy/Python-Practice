@@ -305,7 +305,6 @@
 
 import random
 
-
 def check_winner(player_sum, dealer_sum):
     if player_sum > 21:
         return "Dealer wins"  # Player busts
