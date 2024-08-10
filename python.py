@@ -237,68 +237,138 @@
 
 
 
-from hangmanart import *  # Assuming this import is required for your other functionality
+# from hangmanart import *  # Assuming this import is required for your other functionality
 
-def addition(num1, num2):
-    num3 = num1 + num2
-    print(f"The answer is: {num3} ")
-    return num3
+# def addition(num1, num2):
+#     num3 = num1 + num2
+#     print(f"The answer is: {num3} ")
+#     return num3
 
-def subtraction(num1, num2):
-    num3 = num1 - num2
-    print(f"The answer is: {num3} ")
-    return num3
+# def subtraction(num1, num2):
+#     num3 = num1 - num2
+#     print(f"The answer is: {num3} ")
+#     return num3
 
-def multiplication(num1, num2):
-    num3 = num1 * num2
-    print(f"The answer is: {num3} ")
-    return num3
+# def multiplication(num1, num2):
+#     num3 = num1 * num2
+#     print(f"The answer is: {num3} ")
+#     return num3
 
-def division(num1, num2):
-    num3 = num1 / num2
-    print(f"The answer is: {num3} ")
-    return num3
+# def division(num1, num2):
+#     num3 = num1 / num2
+#     print(f"The answer is: {num3} ")
+#     return num3
 
-def calculation(operation, num1, num2):
-    if operation == "add":
-        return addition(num1, num2)
-    elif operation == "div":
-        return division(num1, num2)
-    elif operation == "mult":
-        return multiplication(num1, num2)
-    elif operation == "sub":
-        return subtraction(num1, num2)
+# def calculation(operation, num1, num2):
+#     if operation == "add":
+#         return addition(num1, num2)
+#     elif operation == "div":
+#         return division(num1, num2)
+#     elif operation == "mult":
+#         return multiplication(num1, num2)
+#     elif operation == "sub":
+#         return subtraction(num1, num2)
+#     else:
+#         print("Invalid operation")
+#         return None
+
+# def main():
+#     print(calculator)
+#     num1 = 0
+#     num2 = 0
+#     num3 = 0
+#     while True:
+#         operation = input("Input add, sub, mult, div for the operation: ").strip().lower()
+        
+#         if operation in ["add", "sub", "mult", "div"]:
+#             if num1 == 0:
+#                 num1 = int(input("Input first number: "))
+#             num2 = int(input("Input second number: "))
+            
+#             num3 = calculation(operation, num1, num2)
+                            
+#             continue_with_value = input("Do you want to continue with this value? Yes/No: ").strip().lower()
+#             if continue_with_value == "yes":
+#                 num1 = num3
+#             else:
+#                 num1 = 0
+#                 num2 = 0
+#         else:
+#             print("Invalid operation. Please enter add, sub, mult, or div.")
+#         end_operatio = str(input("Do you want to continue or end caclulation Yes or No: ")).strip().lower()
+#         if end_operatio == "yes":
+#             print("Shutting down ... ")
+#             return
+
+# if __name__ == "__main__":
+#     main()
+
+import random
+
+
+def check_winner(player_sum, dealer_sum):
+    if player_sum > 21:
+        return "Dealer wins"  # Player busts
+    elif dealer_sum > 21:
+        return "Player wins"  # Dealer busts
     else:
-        print("Invalid operation")
-        return None
+        # Both sums are 21 or below, determine who is closer to 21
+        if player_sum > dealer_sum:
+            return "Player wins"
+        elif dealer_sum > player_sum:
+            return "Dealer wins"
+        else:
+            return "It's a tie"
 
 def main():
-    print(calculator)
-    num1 = 0
-    num2 = 0
-    num3 = 0
-    while True:
-        operation = input("Input add, sub, mult, div for the operation: ").strip().lower()
-        
-        if operation in ["add", "sub", "mult", "div"]:
-            if num1 == 0:
-                num1 = int(input("Input first number: "))
-            num2 = int(input("Input second number: "))
-            
-            num3 = calculation(operation, num1, num2)
-                            
-            continue_with_value = input("Do you want to continue with this value? Yes/No: ").strip().lower()
-            if continue_with_value == "yes":
-                num1 = num3
-            else:
-                num1 = 0
-                num2 = 0
-        else:
-            print("Invalid operation. Please enter add, sub, mult, or div.")
-        end_operatio = str(input("Do you want to continue or end caclulation Yes or No: ")).strip().lower()
-        if end_operatio == "yes":
-            print("Shutting down ... ")
-            return
+    
+    deck = [
+    2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10,  # Hearts
+    2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10,  # Diamonds
+    2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10,  # Clubs
+    2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10   # Spades
+    ]
+    user_cards = random.sample(deck,2)
+    dealer_cards = random.sample(deck,2)
+    
+    still_playing =  True
+    while still_playing:
+        PotSize =int(input("Enter Total Pot: "))
+        initialBet = int(input("Enter Inital bet amount: "))
+        print(f"Player one card {user_cards} Dealer card {dealer_cards[0]}")
+        user_sum = sum(user_cards)
+        while user_sum <= 21 :
+            Player_hit = input("Do yount to hit or Stand: ").strip().lower()
+            if Player_hit == "hit":
+                user_cards.append(random.sample(deck,1)[0])
+                player_sum = sum(user_cards)
+                print(player_sum)
+                if player_sum >= 21:
+                    still_playing = False
+                    break
+            elif Player_hit == "stand":
+                user_total = sum(user_cards)
+                print(user_total)
+                still_playing = False
+                break
+    dealer_sum = sum(dealer_cards)
+    while dealer_sum < 17:
+        dealer_cards.append(random.sample(deck,1)[0])
+        print(dealer_cards)
+        dealer_sum = sum(dealer_cards)
+        print(dealer_sum)
+               
+    print(f"Player Sum is {player_sum} While Dealer sum is {dealer_sum}")
+    result = check_winner(player_sum, dealer_sum)
+    if result == "Player wins":
+        PotSize += 2 * initialBet
+        print(f"You won current potsize is {PotSize}")
+    elif result == "Dealer wins":
+        PotSize = PotSize - initialBet
+        print(f"You Lost current Pot size is {PotSize}")
+    else:
+        print(f"Its a tie Pot Size remains {PotSize}")
+    print(result)  
 
 if __name__ == "__main__":
     main()
