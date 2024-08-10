@@ -328,12 +328,12 @@ def main():
     2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10,  # Clubs
     2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10   # Spades
     ]
-    user_cards = random.sample(deck,2)
-    dealer_cards = random.sample(deck,2)
     
     still_playing =  True
-    while still_playing:
-        PotSize =int(input("Enter Total Pot: "))
+    PotSize =int(input("Enter Total Pot: "))
+    while still_playing:        
+        user_cards = random.sample(deck,2)
+        dealer_cards = random.sample(deck,2)
         initialBet = int(input("Enter Inital bet amount: "))
         print(f"Player one card {user_cards} Dealer card {dealer_cards[0]}")
         user_sum = sum(user_cards)
@@ -344,31 +344,39 @@ def main():
                 player_sum = sum(user_cards)
                 print(player_sum)
                 if player_sum >= 21:
-                    still_playing = False
+
                     break
             elif Player_hit == "stand":
                 user_total = sum(user_cards)
                 print(user_total)
-                still_playing = False
                 break
-    dealer_sum = sum(dealer_cards)
-    while dealer_sum < 17:
-        dealer_cards.append(random.sample(deck,1)[0])
-        print(dealer_cards)
         dealer_sum = sum(dealer_cards)
-        print(dealer_sum)
-               
-    print(f"Player Sum is {player_sum} While Dealer sum is {dealer_sum}")
-    result = check_winner(player_sum, dealer_sum)
-    if result == "Player wins":
-        PotSize += 2 * initialBet
-        print(f"You won current potsize is {PotSize}")
-    elif result == "Dealer wins":
-        PotSize = PotSize - initialBet
-        print(f"You Lost current Pot size is {PotSize}")
-    else:
-        print(f"Its a tie Pot Size remains {PotSize}")
-    print(result)  
+        while dealer_sum < 17:
+            dealer_cards.append(random.sample(deck,1)[0])
+            print(dealer_cards)
+            dealer_sum = sum(dealer_cards)
+            print(dealer_sum)
+                
+        print(f"Player Sum is {player_sum} While Dealer sum is {dealer_sum}")
+        result = check_winner(player_sum, dealer_sum)
+        if result == "Player wins":
+            PotSize += 2 * initialBet
+            print(f"You won current potsize is {PotSize}")
+        elif result == "Dealer wins":
+            PotSize = PotSize - initialBet
+            print(f"You Lost current Pot size is {PotSize}")
+        else:
+            print(f"Its a tie Pot Size remains {PotSize}")
+        print(result)  
+        end_game = str(input("Are You Still playing Yes or No? ")).strip().lower()
+        if end_game == "No":
+            still_playing = False
+        else:
+            user_cards = []
+            dealer_cards = []
+            continue
+        
+    
 
 if __name__ == "__main__":
     main()
