@@ -304,6 +304,7 @@
 #     main()
 
 import random
+from hangmanart import *
 
 def check_winner(player_sum, dealer_sum):
     if player_sum > 21:
@@ -320,7 +321,7 @@ def check_winner(player_sum, dealer_sum):
             return "It's a tie"
 
 def main():
-    
+    print(blackjack)
     deck = [
     2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10,  # Hearts
     2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10,  # Diamonds
@@ -341,9 +342,9 @@ def main():
             if Player_hit == "hit":
                 user_cards.append(random.sample(deck,1)[0])
                 player_sum = sum(user_cards)
+                print(f"Players cards are {user_cards}")
                 print(player_sum)
                 if player_sum >= 21:
-
                     break
             elif Player_hit == "stand":
                 user_total = sum(user_cards)
@@ -368,8 +369,9 @@ def main():
             print(f"Its a tie Pot Size remains {PotSize}")
         print(result)  
         end_game = str(input("Are You Still playing Yes or No? ")).strip().lower()
-        if end_game == "No":
-            still_playing = False
+        if end_game == "no":
+            print("Thank You For Playing")
+            return
         else:
             user_cards = []
             dealer_cards = []
