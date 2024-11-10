@@ -1,9 +1,10 @@
-
-
-
 import random
 def main():
-    print("Welcome to guessin game")
+    print("""
+          
+          Welcome to guessin game The range is between 1 to 100
+          
+          """)
     num_guess = random.randint(1,100)
     difficulty = str(input("Choose a difficulty easy or hard? ")).strip().lower()
     if difficulty == "easy":
@@ -39,8 +40,8 @@ def main():
                 print(f"Chances left is {chances} ")
         print(f"You ran  out of chances the correct guess is: { num_guess }")
     play_again = str(input("Do you want to play again? ")).strip().lower()
-    if play_again == "yes":
-         main()
+    if play_again == "yes":       
+        main()
     else:
         print("Thank You for Playing")
         return

@@ -143,3 +143,87 @@ blackjack = '''
       
   
 '''
+
+instagram_top_people = {
+"Cristiano Ronaldo": 570_000_000,
+"Lionel Messi": 480_000_000,
+"Selena Gomez": 430_000_000,
+"Kylie Jenner": 410_000_000,
+"Kim Kardashian": 400_000_000,
+"Ariana Grande": 400_000_000,
+"Dwayne Johnson": 400_000_000,
+"Taylor Swift": 370_000_000,
+"Kendall Jenner": 300_000_000,
+"Justin Bieber": 300_000_000,
+"Nicki Minaj": 250_000_000,
+"Cardi B": 250_000_000,
+"Virat Kohli": 250_000_000,
+"Khloé Kardashian": 280_000_000,
+"Jennifer Lopez": 300_000_000,
+"Miley Cyrus": 250_000_000,
+"Shakira": 100_000_000,
+"Gigi Hadid": 100_000_000,
+"Beyoncé": 300_000_000,
+"Demi Lovato": 130_000_000,
+"Sofia Richie": 40_000_000,
+"Zoe Sugg": 10_000_000,
+"Will Smith": 270_000_000,
+"Steve Harvey": 20_000_000,
+"Cameron Dallas": 20_000_000,
+"Neymar Jr": 250_000_000,
+"Jaden Smith": 30_000_000,
+"Post Malone": 30_000_000,
+"Bella Hadid": 50_000_000,
+"A$AP Rocky": 20_000_000,
+"LeBron James": 150_000_000,
+"Katy Perry": 200_000_000,
+"Rihanna": 150_000_000,
+"Shawn Mendes": 70_000_000,
+"Charlie Puth": 40_000_000,
+"Liza Koshy": 20_000_000,
+"Emma Chamberlain": 20_000_000,
+"Jackie Aina": 10_000_000,
+"Gordon Ramsay": 40_000_000,
+"Chris Hemsworth": 40_000_000,
+"Megan Thee Stallion": 30_000_000,
+"Timothée Chalamet": 20_000_000,
+"Cody Simpson": 10_000_000,
+"Loren Gray": 50_000_000,
+"Nina Dobrev": 25_000_000,
+"Jessica Alba": 20_000_000,
+"Sophie Turner": 30_000_000,
+"Maisie Williams": 20_000_000,
+"Kiersey Clemons": 5_000_000,
+"Kaitlyn Maher": 1_000_000,
+"Vanessa Hudgens": 30_000_000,
+"Danielle Peazer": 10_000_000,
+"Rachael Leigh Cook": 5_000_000,
+"Jessie James Decker": 10_000_000,
+"Lindsay Lohan": 10_000_000,
+}
+
+MENU = {
+      "espresso": {
+            "ingredients": {
+                  "water": 50,
+                  "coffee": 18,
+            },
+            "cost": 1.5,
+      },
+      "latte": {
+            "ingredients": {
+                  "water": 200,
+                  "coffee": 150,
+                  "milk": 24,
+            },
+            "cost": 2.5,
+      },
+      "cappuccino": {
+            "ingredients": {
+                  "water": 250,
+                  "coffee": 100,
+                  "milk": 2.4,
+            },
+            "cost": 3.0,
+      }
+}
