@@ -237,3 +237,35 @@
 
 
 
+
+# from prettytable import PrettyTable
+
+# table = PrettyTable()
+# table.field_names = ["Pokemon Name", "Type"]
+# table.add_row(["Pikachu", "Electric"])
+# table.add_row(["Squirtle", "Water"])
+# table.add_row(["Charmander", "Fire"])
+# table.align = "l"
+
+# print(f"\n{table}")
+
+# class Car:
+#     def __init__(self,username,id,age):
+#         self.username = username
+#         self.id = id
+#         self.age = age
+#     def welcome(self):
+#         print(f"Hello {self.username} You Are {self.age} Years Old now your id is {self.id}")
+#         return True
+
+# car = Car("damilola",12,19)
+# car.welcome()
+# print(car.id)
+
+
+
+
+
+
+
+
