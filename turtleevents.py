@@ -82,37 +82,45 @@
 
 """ Turtle Betting Race """
 
-from turtle import Turtle, Screen
-import random
+# from turtle import Turtle, Screen
+# import random
 
-screen = Screen()
-screen.setup(500,400)
+# screen = Screen()
+# screen.setup(500,400)
 
+# race_on = False
+# Bet = screen.textinput("TURTLE BET", "What color do you think is winning?")
+# colors = ["red","blue","green","orange","yellow"]
+# y_pos = [-70,-40,-10,20,50]
+# turtles = []
 
-winner = screen.textinput("TURTLE BET", "What color do you think is winning?")
-colors = ["red","blue","green","orange","yellow"]
-y_pos = [-70,-40,-10,20,50]
-turtles = []
-
-for turtle_index in range(0,5):
-        new_turtle = Turtle()
-        new_turtle.shape("turtle")
-        new_turtle.penup()
-        new_turtle.goto(x = -230,y = y_pos[turtle_index])
-        new_turtle.color(colors[turtle_index])
-        turtles.append(new_turtle)
+# for turtle_index in range(0,5):
+#         new_turtle = Turtle()
+#         new_turtle.shape("turtle")
+#         new_turtle.penup()
+#         new_turtle.goto(x = -230,y = y_pos[turtle_index])
+#         new_turtle.color(colors[turtle_index])
+#         turtles.append(new_turtle)
         
-def check_winner():
-    x , _ = new_turtle.pos
-    if x >= 500:
-        print(f"Color {new_turtle.color} won")
+# if Bet:
+#     race_on = True
+            
+# while race_on:
+#     for turtle in turtles:
+#         if turtle.xcor() > 230:
+#             winner = turtle.pencolor()
+#             if winner == Bet:
+#                 print(f"You have won the winning color was {Bet}")
+#                 race_on = False
+#             else:
+#                 print(f"You lost winning color was {winner}")
+#                 race_on = False
+#         random_distance = random.randint(0,10)
+#         turtle.forward(random_distance)
 
-if winner:
-    is_race = True
-    while is_race:
-        for t in turtles:
-            t.forward(random.randint(0,10))
         
-        
-        
-screen.exitonclick()
+# screen.exitonclick()
+
+
+
+
