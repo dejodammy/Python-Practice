@@ -20,10 +20,7 @@ while play_on:
     state_answer = screen.textinput(f"Guess state score:{score}/50" , "Guess a state").lower().strip()
     
     if state_answer == "exit":
-        missed_states = []
-        for s in states:
-            if s not in correct_answers:
-                missed_states.append(s)
+        missed_states = [s for s in states if s not in correct_answers]
         
         new_data = pandas.DataFrame(missed_states)
         new_data.to_csv("missedstate.csv")
