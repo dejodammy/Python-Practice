@@ -1,13 +1,8 @@
-import pandas
-
-data = pandas.read_csv("file1.txt")
-numbers = data.numbers
-numbers1 = numbers.to_list()
-
-datas = pandas.read_csv("file2.txt")
-number = datas.numbers
-numbers2 = number.to_list()
-
-result = [int(n) for n in numbers1 if n in numbers2 ]
-
-print(result)
+def add(*args):
+    answer = 0
+    for n in args:
+        answer += n
+    return answer 
+    
+    
+print(add(1,2,3,4,54,5,6,))
